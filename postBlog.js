@@ -3,7 +3,7 @@
  */
 "use strict";
 import $ from "jquery";
-import cookies from "./getCookies";
+import {cookies} from "./getCookies";
 import config from "./config";
 
 export default function (content) {
@@ -14,7 +14,10 @@ export default function (content) {
     let cnblogCheck=$("#cnblog");
     if(sfCheck.prop("checked")){
         console.log("sf checked");
-        let sfCookie=cookies.getSFCookie();
+        cookies.getSFCookie().then(function(data){
+            console.log(data);
+        });
+        console.log("end");
     }
     if(cnblogCheck.prop("checked")){
         console.log("cnblog checked");

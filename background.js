@@ -9,4 +9,7 @@ chrome.runtime.onMessage.addListener(
             let tplStr = $("#template").html();
             sendResponse({ htmlTpl: tplStr});
         }
+        if(request.query==2){
+            sendResponse({data:"cookies"});
+        }
     });
