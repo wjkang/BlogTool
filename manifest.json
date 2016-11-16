@@ -19,6 +19,8 @@
     ],
     "permissions": [
         "http://www.jianshu.com/writer*",
-        "tabs"
+        "tabs",
+        "cookies",
+        "*://*.segmentfault.com/"
     ]
 }

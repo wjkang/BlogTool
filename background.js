@@ -3,6 +3,10 @@
  */
 "use strict";
 import $ from 'jquery';
+var cookies;
+chrome.cookies.getAll({url:"https://segmentfault.com"},function(cookie){
+    cookies=cookie;
+})
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.query == 1) {
@@ -10,6 +14,6 @@ chrome.runtime.onMessage.addListener(
             sendResponse({ htmlTpl: tplStr});
         }
         if(request.query==2){
-            sendResponse({data:"cookies"});
+            sendResponse({data:cookies});
         }
     });
