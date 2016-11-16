@@ -23,7 +23,7 @@ export default function (htmlTpl) {
                 let content=$(".mousetrap[name=note_content]").val();
                 if(content){
                     console.log(content);
-                    postBlog();
+                    postBlog(content);
                 }
             });
         }
