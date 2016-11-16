@@ -12,7 +12,7 @@ $(function(){
         setTimeout(function(){
             appendTpl(htmlTpl);
             addListener(htmlTpl);
-        },5000);
+        },2000);
 
     });
 });
