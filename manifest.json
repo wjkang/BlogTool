@@ -12,14 +12,13 @@
     "content_scripts": [
         {
             "matches": [
-                "http://hz-productposting.alibaba.com/product/posting.htm"
+                "http://www.jianshu.com/writer*"
             ],
             "js": ["js/load.js","js/jquery.js","js/content.js"]
         }
     ],
     "permissions": [
-        "http://*/*",
-        "https://*/*",
+        "http://www.jianshu.com/writer*",
         "tabs"
     ]
 }
