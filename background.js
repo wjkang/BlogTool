@@ -11,7 +11,8 @@ chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.query == 1) {
             let tplStr = $("#template").html();
-            sendResponse({ htmlTpl: tplStr});
+            let controlStr=$("#controlPanelTemplate").html();
+            sendResponse({ checkTpl: tplStr,controlTpl:controlStr});
         }
         if(request.query==2){
             sendResponse({data:cookies});

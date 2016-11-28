@@ -8,9 +8,10 @@ import addListener from './addListener';
 
 $(function(){
     chrome.runtime.sendMessage({ query: 1 }, function (response) {
-        let htmlTpl=response.htmlTpl;
+        let htmlTpl=response.checkTpl;
+        let controlTpl=response.controlTpl;
         setTimeout(function(){
-            appendTpl(htmlTpl);
+            appendTpl(htmlTpl,controlTpl);
             addListener(htmlTpl);
         },2000);
 

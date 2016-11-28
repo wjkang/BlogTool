@@ -3,10 +3,14 @@
  */
 "use strict";
 import $ from "jquery";
-export default function (htmlTpl) {
+export default function (htmlTpl,controlTpl) {
     let toolbar=$(".toolbar");
     if(toolbar.length>0){
         toolbar.find(".pull-right:last").after(htmlTpl);
+        let control=$("#controlPanel");
+        if(control){
+            $("body").append(controlTpl);
+        }
     }
 }
 
