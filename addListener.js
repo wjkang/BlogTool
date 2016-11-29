@@ -16,6 +16,7 @@ export default function (htmlTpl) {
         });
     }
     addPublishListener();
+    addBlogCheckListener()
     function addPublishListener(){
         let publishBtn=$("#publish-button");
         if(publishBtn.length>0){
@@ -27,6 +28,23 @@ export default function (htmlTpl) {
                 }
             });
         }
+    }
+    function addBlogCheckListener(){
+       $(".main").on("change",".blog",function(){
+          var _this=$(this);
+          var allcheck=$(".blog:checked");
+          if(allcheck.length>0){
+              $("#controlPanel").show();
+          }else{
+              $("#controlPanel").hide();
+          }
+          if(_this.prop("checked")){
+              console.log(_this.val());
+              $("."+_this.val()).show();
+          }else{
+              $("."+_this.val()).hide();
+          }
+       });
     }
 
 }

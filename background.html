@@ -12,51 +12,31 @@
 <body>
    <template id="template">
        <li class="pull-right" style="line-height: 35px;margin-right: 15px">
-           <label style="display: inline"><input type="checkbox" id="cnblog" style="vertical-align: text-top">cnblog</label>
+           <label style="display: inline"><input  type="checkbox" class="blog" id="cnblog" value="cnControl" style="margin: 0">cnblog</label>
        </li>
        <li class="pull-right" style="line-height: 35px;margin-right: 15px">
-           <label style="display: inline"><input type="checkbox" id="sf" style="vertical-align: text-top">sf</label>
+           <label style="display: inline"><input type="checkbox" class="blog" id="sf" value="sfControl" style="margin: 0">sf</label>
        </li>
    </template>
    <template id="controlPanelTemplate">
-       <div id="controlPanel" style="width:400px;background-color:#d1c091;border-radius:10px;padding:15px;position: absolute;right: 0px;bottom:0px;z-index: 99">
-           <div class="cnControl" style="padding-left:10px;border:1px solid #dedede">
+       <div id="controlPanel" style="display:none;width:400px;background-color:#d1c091;border-radius:10px;padding:15px;position: absolute;right: 0px;bottom:0px;z-index: 99">
+           <div class="cnControl" style="display:none;padding-left:10px;border:1px solid #dedede">
                <div>博客园:</div>
                <div style="margin-top: 5px;">
                    <span>标签：</span>
                    <span>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
+                     <label style="display: inline"><input style="margin: 0" type="checkbox" name="sftag" value="">css</label>
+                     <label style="display: inline"><input style="margin: 0" type="checkbox" name="sftag" value="">JavaScript</label>
                  </span>
                </div>
            </div>
-           <div class="sfControl" style="margin-top:10px;padding-left:10px;border:1px solid #dedede">
+           <div class="sfControl" style="display:none;margin-top:10px;padding-left:10px;border:1px solid #dedede">
              <div>segmentfault:</div>
              <div style="margin-top: 5px;">
                  <span>标签：</span>
                  <span>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">css</label>
-                     <label style="display: inline"><input type="checkbox" name="sftag" value="">JavaScript</label>
+                     <label style="display: inline"><input style="margin: 0" type="checkbox" name="sftag" value="">css</label>
+                     <label style="display: inline"><input style="margin: 0" type="checkbox" name="sftag" value="">JavaScript</label>
                  </span>
              </div>
          </div>
