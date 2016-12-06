@@ -22,9 +22,9 @@ export default function (htmlTpl) {
         if(publishBtn.length>0){
             $(".main").on("click","#publish-button",function(){
                 let content=$(".mousetrap[name=note_content]").val();
+                let title="";
                 if(content){
-                    console.log(content);
-                    postBlog(content);
+                    postBlog(title,content).then(data=>console.log(data));
                 }
             });
         }

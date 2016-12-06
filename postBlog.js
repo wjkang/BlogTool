@@ -6,22 +6,42 @@ import $ from "jquery";
 import {cookies} from "./getCookies";
 import config from "./config";
 
-export default function (content) {
+export default async function(title,content) {
     var data={};
     data.content=content;
-    
+    data.title=title;
+    data.sfTags="";
+    data.sfCookies="";
     let sfCheck=$("#sf");
-    let cnblogCheck=$("#cnblog");
+    let cnBlogCheck=$("#cnblog");
     if(sfCheck.prop("checked")){
         console.log("sf checked");
-        cookies.getSFCookie().then(function(data){
-            console.log(data);
+        let sfTagsChecked=$("#controlPanel .sfControl").find("input[name=sftag]:checked");
+        $.each(sfTagsChecked,function(){
+            if(data.sfTags==""){
+                data.sfTags+=$(this).val();
+            }else{
+                data.sfTags+=","+$(this).val();
+            }
         });
-        console.log("end");
+        let sfCookies=await cookies.getSFCookie();
+        $.each(sfCookies,function(){
+           if(data.sfCookies==""){
+               data.sfCookies+=this.name+"="+this.value;
+           }else{
+               data.sfCookies+=";"+this.name+"="+this.value;
+           }
+        });
     }
-    if(cnblogCheck.prop("checked")){
+    if(cnBlogCheck.prop("checked")){
         console.log("cnblog checked");
-        let cnblogCookie=cookies.getCNBlogCookie();
+        let cnblogCookie=await cookies.getCNBlogCookie();
     }
-     
+    console.log(data);
+    return await new Promise((resolve, reject)=> {
+        $.post(config.proxyUrl,data,function(data){
+            resolve(data);
+        });
+    });
+
 }
