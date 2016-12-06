@@ -3,5 +3,5 @@
  */
 "use strict";
 export default {
-    proxyUrl:"",
+    proxyUrl:"http://localhost:3000/"
 }
